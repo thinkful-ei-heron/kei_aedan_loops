@@ -47,16 +47,17 @@ function repeat(fn, n){
   }
 }
 
-let a = function hello(){
+/*function hello(){
   console.log('Hello world');
 }
 
 function goodbye(){
   console.log('Goodbye world');
 }
+*/
 
-// repeat(a, 3);
-// repeat(goodbye, 5);
+repeat(hello => console.log('Hello world'), 5);
+repeat(goodbye => console.log('Goodbye world'), 5);
 
 function filter(arr, fn) { 
   let newArray = [];
@@ -80,7 +81,7 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
-// console.log(filter(myNames, name => name[0] === 'R')); // => ['Rich', 'Ray']
+console.log(filter(myNames, name => name[0] === 'R')); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
 function hazardWarningCreator(typeOfWarning){
@@ -95,7 +96,7 @@ function hazardWarningCreator(typeOfWarning){
     }
   };
 }
-/*
+
 const rocksWarning = hazardWarningCreator('Rocks on the Road');
 const floodWarning = hazardWarningCreator('Water on the Road');
 const thunderWarning = hazardWarningCreator('Lightning in the air');
@@ -105,7 +106,7 @@ rocksWarning('Centinela Ave and Olympic Blvd');
 floodWarning('Main St and Centinela Ave');
 thunderWarning('Olympic Blvd and Pacific Ave');
 thunderWarning('Olympic Blvd and Main St');
-*/
+
 
 function turtle(arr) {
   let arrayFilter = arr.filter(element => element[0] >= 0 && element[1] >= 0);
@@ -118,4 +119,15 @@ function turtle(arr) {
 
 }
 
-// turtle([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
+turtle([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
+
+let text = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+let arr = text.split(' ');
+let decode = arr.reduce( function(accumulator, current) {
+  if (current.length === 3){
+    return accumulator = accumulator + ' ';
+  } else {
+    return accumulator = accumulator + current[current.length-1].toUpperCase();
+  }
+}, '');
+console.log(decode);
