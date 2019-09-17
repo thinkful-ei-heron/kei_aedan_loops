@@ -32,3 +32,13 @@ function min(numbers){
     return min;
   }
 }
+
+function average(num) {
+  let total = 0; 
+  num.forEach(element => {
+    total += element;
+  });
+  return total/num.length;
+}
+
+console.log(average([55, 3, 52, 56,123]));
