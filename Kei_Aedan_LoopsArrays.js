@@ -80,7 +80,7 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
-//console.log(filteredNames) // => ['Rich', 'Ray']
+// console.log(filter(myNames, name => name[0] === 'R')); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
 function hazardWarningCreator(typeOfWarning){
@@ -106,3 +106,16 @@ floodWarning('Main St and Centinela Ave');
 thunderWarning('Olympic Blvd and Pacific Ave');
 thunderWarning('Olympic Blvd and Main St');
 */
+
+function turtle(arr) {
+  let arrayFilter = arr.filter(element => element[0] >= 0 && element[1] >= 0);
+  let arrayMap = arrayFilter.map(element => element[0] + element[1]);
+  let counter = 1; 
+  arrayMap.forEach(element => {
+    console.log(`Movement #${counter}: ${element} steps`);
+    counter++;
+  });
+
+}
+
+// turtle([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
