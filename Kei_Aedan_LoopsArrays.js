@@ -41,4 +41,19 @@ function average(num) {
   return total/num.length;
 }
 
-console.log(average([55, 3, 52, 56,123]));
+function repeat(fn, n){
+  for (let i = 0; i < n; i++){
+    fn();
+  }
+}
+
+function hello(){
+  console.log('Hello world');
+}
+
+function goodbye(){
+  console.log('Goodbye world');
+}
+
+repeat(hello, 5);
+repeat(goodbye, 5);
